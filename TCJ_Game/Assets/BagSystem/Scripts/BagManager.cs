@@ -11,11 +11,6 @@ public class BagManager : MonoBehaviour
     public Sprite[] totalItemSprites;
     private List<ItemData> itemDataList = new List<ItemData>();
 
-    private void Awake() 
-    {
-        
-    }
-
     private void Start() 
     {
         Bag.SetActive(_IsOpen);
@@ -45,8 +40,18 @@ public class BagManager : MonoBehaviour
         
         BagUnit unit = Instantiate<BagUnit>(cloneUnit,bagNode);
         itemInfo.SetBagUnit(unit);
+        unit.gameObject.SetActive(true);
         itemDataList.Add(itemInfo);
         unit.Refresh(itemInfo);
-        
+    }
+
+    public void OnClickUnit(BagUnit unit)
+    {
+        unit.OnUse();
+
+        if(unit.GetItemData().Count == 0)
+        {
+            itemDataList.Remove(unit.GetItemData());
+        }
     }
 }

@@ -8,13 +8,28 @@ public class BagUnit : MonoBehaviour
     public Image Icon;
     public Text CountText;
     public Text ItemText;
-    private ItemData tempData;
+    private ItemData itemData;
+    public ItemData GetItemData(){ return itemData;}
 
-    public void Refresh(ItemData itemData)
+
+    public void Refresh(ItemData itemInfo)
     {
-        tempData = itemData;
-        Icon.sprite = itemData.Icon;
-        ItemText.text = itemData.ItemID;
-        CountText.text = itemData.Count.ToString();
+        itemData = itemInfo;
+        Icon.sprite = itemInfo.Icon;
+        ItemText.text = itemInfo.ItemID;
+        CountText.text = itemInfo.Count.ToString();
+    }
+
+    public void OnUse()
+    {
+        itemData.Count--;
+
+        if(itemData.Count == 0)
+        {
+            Destroy(gameObject);
+        }
+
+        Refresh(itemData);
+        print("Use Item " + itemData.ItemID);
     }
 }
