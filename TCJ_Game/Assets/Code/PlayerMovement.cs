@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public float moveSpeed;
+
     void Start()
     {
-        
+        moveSpeed = 3f;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+        transform.Translate(moveSpeed*Input.GetAxis("Horizontal") * Time.deltaTime, 0f, -moveSpeed * Input.GetAxis("Vertical") * Time.deltaTime);
         
     }
+   
+
 }

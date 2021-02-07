@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Code\Npc.cs" />
     <Compile Include="Assets\Code\PlayerMovement.cs" />
+    <Compile Include="Assets\Code\SceneTransion.cs" />
     <Compile Include="Assets\Code\TalkSystem.cs" />
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>F:/TCJ_Game/TCJ_Game/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
