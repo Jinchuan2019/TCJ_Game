@@ -5,19 +5,15 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     private new Collider collider;
-    public BagManager Bag;
+    private BagManager bag;
     public ItemData itemInfo;
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        Bag = GameObject.Find("BagManager").GetComponent<BagManager>();
+        bag = BagManager.GetBagManager;
         collider = gameObject.GetComponent<Collider>();
-        if(collider == null)
-        {
-            //
-            collider = gameObject.AddComponent<BoxCollider>();
-        }
+
         collider.isTrigger = true;
     }
 
@@ -30,7 +26,7 @@ public class Item : MonoBehaviour
     public void TakeItem()
     {
         print("Take "+ gameObject.name);
-        Bag.ItemIntoBag(itemInfo);
+        bag.ItemIntoBag(itemInfo);
         Destroy(this.gameObject);
     } 
 }

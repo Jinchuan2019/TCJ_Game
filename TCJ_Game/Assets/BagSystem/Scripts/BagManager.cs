@@ -4,24 +4,33 @@ using UnityEngine;
 
 public class BagManager : MonoBehaviour
 {
-    public GameObject Bag;
-    private bool _IsOpen;
+    public GameObject bag;
+    private static BagManager _bagManager;
+    public static BagManager GetBagManager
+    {
+        get{ return _bagManager;}
+    }
+    private bool _isOpen;
     public BagUnit cloneUnit;
     public Transform bagNode;
     public Sprite[] totalItemSprites;
     private List<ItemData> itemDataList = new List<ItemData>();
 
-    private void Start() 
+    private void Awake() 
     {
-        Bag.SetActive(_IsOpen);
+        bag.SetActive(_isOpen);
+        if(_bagManager == null)
+        {
+            _bagManager = this;
+        }
     }
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.I))
         {
-            _IsOpen = !_IsOpen;
-            Bag.SetActive(_IsOpen);
+            _isOpen = !_isOpen;
+            bag.SetActive(_isOpen);
         }
     }
 
