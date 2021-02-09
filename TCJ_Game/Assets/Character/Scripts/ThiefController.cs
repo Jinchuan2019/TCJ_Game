@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : CharacterController
+public class ThiefController : CharacterController
 {
     // Start is called before the first frame update
-    protected override void Start()
+    protected override  void Start()
     {
         base.Start();
     }
@@ -15,7 +15,6 @@ public class PlayerController : CharacterController
     {
         base.Update();
     }
-
 
     protected override void OnTriggerStay(Collider other) 
     {
