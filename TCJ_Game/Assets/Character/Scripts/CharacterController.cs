@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    protected new Rigidbody rigidbody;
+    protected new Rigidbody2D rigidbody;
     protected Animator animator;
     private enum State
     {
@@ -20,7 +20,7 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
         rigidbody.freezeRotation = true;
@@ -37,20 +37,19 @@ public class CharacterController : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
 
-        if( vertical != 0 || horizontal != 0){
-            Vector3 direction = new Vector3( horizontal, 0, vertical).normalized;
+        if( vertical != 0 || horizontal != 0)
+        {
+            Vector2 direction = new Vector2( horizontal, vertical).normalized;
             float y = Camera.main.transform.rotation.eulerAngles.y;
-            direction = Quaternion.Euler(0, y, 0) * direction;
-            Vector3 target = Vector3.Lerp(transform.forward, direction, 0.2f);
-            transform.LookAt(transform.position + target);
+            Vector2 target = Vector2.Lerp(transform.forward, direction, 0.5f);
             transform.Translate(target * Time.deltaTime * speed, Space.World);
         }
     }
 
-    protected virtual void OnTriggerStay(Collider other) 
+    protected virtual void OnTriggerStay2D(Collider2D other) 
     {
         var item = other.gameObject.GetComponent<Item>();
-        if(other == null) {
+        if(item != null) {
             //TakeItem
             if(Input.GetKeyDown(KeyCode.F))
             {

@@ -17,8 +17,8 @@ public class PlayerController : CharacterController
     }
 
 
-    protected override void OnTriggerStay(Collider other) 
+    protected override void OnTriggerStay2D(Collider2D other) 
     {
-        base.OnTriggerStay(other);
+        base.OnTriggerStay2D(other);
     }
 }

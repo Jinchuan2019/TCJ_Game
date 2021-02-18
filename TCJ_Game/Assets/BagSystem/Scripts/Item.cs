@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    private new Collider collider;
+    private new Collider2D collider;
     private BagManager bag;
     public ItemData itemInfo;
 
@@ -12,7 +12,7 @@ public class Item : MonoBehaviour
     protected virtual void Start()
     {
         bag = BagManager.GetBagManager;
-        collider = gameObject.GetComponent<Collider>();
+        collider = gameObject.GetComponent<Collider2D>();
 
         collider.isTrigger = true;
     }

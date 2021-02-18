@@ -56,6 +56,7 @@ public class BagManager : MonoBehaviour
 
     public void OnClickUnit(BagUnit unit)
     {
+        print("00000000");
         unit.OnUse();
 
         if(unit.GetItemData().Count == 0)

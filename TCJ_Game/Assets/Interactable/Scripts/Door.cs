@@ -7,10 +7,19 @@ public class Door : MonoBehaviour,Interactable
     
     private bool _openDoor;
     public GameObject bomb;
+    public float speed;
+    public GameObject moveDoorUp;
+    public GameObject moveDoorDown;
+    public GameObject targetDoorUp;
+    public GameObject targetDoorDown;
+    private Vector2 doorUp;
+    private Vector2 doorDown;
     // Start is called before the first frame update
     void Start()
     {
         bomb.SetActive(false);
+        doorUp = moveDoorUp.transform.position;
+        doorDown = moveDoorDown.transform.position;
     }
 
     // Update is called once per frame
@@ -18,11 +27,19 @@ public class Door : MonoBehaviour,Interactable
     {
         if(_openDoor)
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.Euler(0,90,0),0.05f);
+            //var direction= new Vector2(-0.5f,0f);
+            //Vector2 target = Vector2.Lerp(transform.forward, direction , 0.5f);
+            //moveDoorUp.transform.Translate(target * Time.deltaTime * speed, Space.World);
+            //moveDoorDown.transform.Translate(target * Time.deltaTime * speed, Space.World);
+            
+            moveDoorUp.transform.position = Vector2.Lerp(moveDoorUp.transform.position, targetDoorUp.transform.position , 0.2f);
+            moveDoorDown.transform.position = Vector2.Lerp(moveDoorDown.transform.position, targetDoorDown.transform.position , 0.2f);
         }
         else
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.Euler(0,0,0),0.05f);
+            
+            moveDoorUp.transform.position = Vector2.Lerp(moveDoorUp.transform.position, doorUp , 0.2f);
+            moveDoorDown.transform.position = Vector2.Lerp(moveDoorDown.transform.position, doorDown , 0.2f);
         }
     }
     public void Interact(CharacterController sender,EnumClass.Event eventName)
