@@ -43,7 +43,11 @@ public class CharacterController : MonoBehaviour
             float y = Camera.main.transform.rotation.eulerAngles.y;
             Vector2 target = Vector2.Lerp(transform.forward, direction, 0.5f);
             transform.Translate(target * Time.deltaTime * speed, Space.World);
+            
+            animator.SetFloat("XSpeed", horizontal);
+            animator.SetFloat("YSpeed", vertical);
         }
+        
     }
 
     protected virtual void OnTriggerStay2D(Collider2D other) 
