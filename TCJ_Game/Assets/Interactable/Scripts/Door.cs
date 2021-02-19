@@ -10,8 +10,6 @@ public class Door : MonoBehaviour,Interactable
     public float speed;
     public GameObject moveDoorUp;
     public GameObject moveDoorDown;
-    public GameObject targetDoorUp;
-    public GameObject targetDoorDown;
     private Vector2 doorUp;
     private Vector2 doorDown;
     // Start is called before the first frame update
@@ -27,17 +25,13 @@ public class Door : MonoBehaviour,Interactable
     {
         if(_openDoor)
         {
-            //var direction= new Vector2(-0.5f,0f);
-            //Vector2 target = Vector2.Lerp(transform.forward, direction , 0.5f);
-            //moveDoorUp.transform.Translate(target * Time.deltaTime * speed, Space.World);
-            //moveDoorDown.transform.Translate(target * Time.deltaTime * speed, Space.World);
-            
-            moveDoorUp.transform.position = Vector2.Lerp(moveDoorUp.transform.position, targetDoorUp.transform.position , 0.2f);
-            moveDoorDown.transform.position = Vector2.Lerp(moveDoorDown.transform.position, targetDoorDown.transform.position , 0.2f);
+            var targetDoor = new Vector2(2.5f,0);
+
+            moveDoorUp.transform.position = Vector2.Lerp(moveDoorUp.transform.position, doorUp - targetDoor , 0.2f);
+            moveDoorDown.transform.position = Vector2.Lerp(moveDoorDown.transform.position, doorDown - targetDoor , 0.2f);
         }
         else
         {
-            
             moveDoorUp.transform.position = Vector2.Lerp(moveDoorUp.transform.position, doorUp , 0.2f);
             moveDoorDown.transform.position = Vector2.Lerp(moveDoorDown.transform.position, doorDown , 0.2f);
         }
