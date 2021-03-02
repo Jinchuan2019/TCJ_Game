@@ -12,5 +12,5 @@ namespace EnumClass
 
 interface Interactable
 {
-    void Interact(CharacterController sender,EnumClass.Event eventName);
+    void Interact(CharacterController sender,EnumClass.Event eventName, bool key);
 }

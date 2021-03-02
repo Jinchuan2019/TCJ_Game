@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour, ISaveable
+public class Itema : MonoBehaviour, ISaveable
 {
     bool selected = false;
     Camera camera = null;

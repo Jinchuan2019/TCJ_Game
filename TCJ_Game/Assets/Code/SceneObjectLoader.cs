@@ -16,8 +16,12 @@ public class SceneObjectLoader : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             isFirstLoad = new Dictionary<string, bool>();
             saveDatas = new Dictionary<string, List<SaveData>>();
-            isFirstLoad.Add("TalkSystem", false);
-            isFirstLoad.Add("scene1",false);      
+            isFirstLoad.Add("Level1", false);
+            isFirstLoad.Add("Level2", false);
+
+            //
+            GameObject go = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Item"));
+            go.transform.position = new Vector3(18.0f, -3.0f);
         }
         else
         {
@@ -62,7 +66,7 @@ public class SceneObjectLoader : MonoBehaviour
             else
             {
                 SaveData ItemData = new SaveData();
-                ItemData.prefabName = "Box";
+                ItemData.prefabName = "Item";
                 ItemData.position = Vector3.zero;
                 saveDatas.Add(sceneName, new List<SaveData>() { ItemData });
                 isFirstLoad[sceneName] = false;
@@ -78,16 +82,16 @@ public class SceneObjectLoader : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Alpha2))
         {
-            StartCoroutine(LoadScene("scene1"));
+            StartCoroutine(LoadScene("Level2"));
         }
         else if (Input.GetKeyUp(KeyCode.Alpha1))
         {
-            StartCoroutine(LoadScene("TalkSystem"));
+            StartCoroutine(LoadScene("Level1"));
         }
         
         else if (Input.GetKeyUp(KeyCode.Q))
         {
-            GameObject go = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Box"));
+            GameObject go = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Item"));
             go.transform.position = Vector3.zero;
         }
     }

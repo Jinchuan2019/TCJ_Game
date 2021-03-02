@@ -22,6 +22,9 @@ public class TalkSystem : MonoBehaviour
     public bool talkActive = false;
     public bool talkEnded = false;
     public bool outOfRange = true;
+
+    private Npc _NPC;
+    public void SetNPC(Npc isNPC) { _NPC = isNPC.GetComponent<Npc>(); }
    
     void Start()
     {
@@ -137,6 +140,8 @@ public class TalkSystem : MonoBehaviour
     {
         TalkGui.SetActive(false);
         TalkBoxGui.gameObject.SetActive(false);
+
+        _NPC.GetKey();
     }
     public void OutOfRange()
     {

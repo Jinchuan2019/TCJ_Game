@@ -6,6 +6,8 @@ public class CharacterController : MonoBehaviour
 {
     protected new Rigidbody2D rigidbody;
     protected Animator animator;
+    protected bool key;
+    public void SetKey(bool iskey) { key = iskey; }
     private enum State
     {
         GetItem,
@@ -66,7 +68,7 @@ public class CharacterController : MonoBehaviour
             //OpenTheDoor
             if(Input.GetKeyDown(KeyCode.F))
             {
-                door.Interact(this,EnumClass.Event.OpenTheDoor);
+                door.Interact(this,EnumClass.Event.OpenTheDoor,key);
             }
         }
         
