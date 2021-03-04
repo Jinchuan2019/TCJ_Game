@@ -22,6 +22,8 @@ public class TalkSystem : MonoBehaviour
     public bool talkActive = false;
     public bool talkEnded = false;
     public bool outOfRange = true;
+    public int firstTalkLine;
+    private bool secondTalk;
 
     private Npc _NPC;
     public void SetNPC(Npc isNPC) { _NPC = isNPC.GetComponent<Npc>(); }
@@ -65,8 +67,14 @@ public class TalkSystem : MonoBehaviour
     {
         if (outOfRange == false)
         {
-            int talkLength = talkLines.Length;
+            int talkLength = firstTalkLine;
             int currentTalkIndex = 0;
+
+            if (secondTalk)
+            {
+                talkLength = talkLines.Length;
+                currentTalkIndex = firstTalkLine;
+            }
 
             while (currentTalkIndex < talkLength || !letterIsMUltiplied)
             {
@@ -141,7 +149,8 @@ public class TalkSystem : MonoBehaviour
         TalkGui.SetActive(false);
         TalkBoxGui.gameObject.SetActive(false);
 
-        _NPC.GetKey();
+        _NPC.SetKey(false);
+        secondTalk = true;
     }
     public void OutOfRange()
     {

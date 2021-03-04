@@ -16,6 +16,8 @@ public class Npc : MonoBehaviour
     public string Name;
     [TextArea(5, 10)]
     public string[] sentences;
+
+    public int firstTalkLine;
     void Start()
     {
         TalkSystem = FindObjectOfType<TalkSystem>();
@@ -26,18 +28,20 @@ public class Npc : MonoBehaviour
     {
         Vector3 Pos = Camera.main.WorldToScreenPoint(NPCCharacter.position);
         Pos.y += 65;
-        BackGround.position = Pos; 
+        //BackGround.position = Pos;
     }
 
     public void OnTriggerStay2D(Collider2D other)
     {
         this.gameObject.GetComponent<Npc>().enabled = true;
         FindObjectOfType<TalkSystem>().EnterRangeOfNPC();
-        if((other.gameObject.tag=="Player")&&Input.GetKeyDown(KeyCode.F))
+        if ((other.gameObject.tag == "Player") && Input.GetKeyDown(KeyCode.F))
         {
             this.gameObject.GetComponent<Npc>().enabled = true;
             TalkSystem.Names = Name;
             TalkSystem.talkLines = sentences;
+            TalkSystem.firstTalkLine = firstTalkLine;
+
             FindObjectOfType<TalkSystem>().NPCName();
 
             //set Player
@@ -50,16 +54,20 @@ public class Npc : MonoBehaviour
     public void OnTriggerExit2D(Collider2D other)
     {
         FindObjectOfType<TalkSystem>().OutOfRange();
-        this.gameObject.GetComponent<Npc>().enabled = false; 
+        this.gameObject.GetComponent<Npc>().enabled = false;
     }
 
-    public void GetKey()
+    public void SetKey(bool key)
     {
-        if(isKey)
+        if (isKey)
         {
             Player.SetKey(isKey);
-            isKey = false;
+            isKey = key;
         }
+    }
+    public bool GetKey()
+    {
+        return isKey;
     }
 }
 

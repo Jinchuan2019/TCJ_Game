@@ -17,11 +17,15 @@ public class SceneTransion : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")&&!other.isTrigger )
+        if (other.CompareTag("Player") && !other.isTrigger)
         {
-            //SceneManager.LoadScene(sceneToLoad);
+            var character = other.GetComponent<CharacterController>();
 
-            StartCoroutine(sceneObjectLoader.LoadScene(sceneToLoad));
+            if (!character.GetOpenDoor())
+            {
+                character.SetOpenDoor(true);
+                StartCoroutine(sceneObjectLoader.LoadScene(sceneToLoad));
+            }
         }
     }
 

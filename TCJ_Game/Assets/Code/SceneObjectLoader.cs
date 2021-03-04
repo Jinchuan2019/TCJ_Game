@@ -8,20 +8,31 @@ public class SceneObjectLoader : MonoBehaviour
     public static SceneObjectLoader instance = null;
     public Dictionary<string, List<SaveData>> saveDatas;
     public Dictionary<string, bool> isFirstLoad;
+
+    public GameObject bagManager;
+    public GameObject canvas;
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(bagManager);
+            DontDestroyOnLoad(canvas);
             isFirstLoad = new Dictionary<string, bool>();
             saveDatas = new Dictionary<string, List<SaveData>>();
+
             isFirstLoad.Add("Level1", false);
             isFirstLoad.Add("Level2", false);
-
+            isFirstLoad.Add("Level3", false);
             //
             GameObject go = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Item"));
             go.transform.position = new Vector3(18.0f, -3.0f);
+
+            GameObject player = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Character/Player"));
+            player.transform.position = new Vector3(4.0f, -9.0f);
+
+            DontDestroyOnLoad(player);
         }
         else
         {

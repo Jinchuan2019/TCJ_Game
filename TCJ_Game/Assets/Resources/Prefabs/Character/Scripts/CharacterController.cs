@@ -8,6 +8,10 @@ public class CharacterController : MonoBehaviour
     protected Animator animator;
     protected bool key;
     public void SetKey(bool iskey) { key = iskey; }
+
+    protected bool isOpen;
+
+    public bool GetOpenDoor() { return isOpen; }
     private enum State
     {
         GetItem,
@@ -74,4 +78,14 @@ public class CharacterController : MonoBehaviour
         
     }
 
+    public void SetOpenDoor(bool inOpen)
+    {
+        isOpen = inOpen;
+        StartCoroutine(OpenTheDoor());
+    }
+    private IEnumerator OpenTheDoor()
+    {
+        yield return new WaitForSeconds(1.0f);
+        SetOpenDoor(false);
+    }
 }
