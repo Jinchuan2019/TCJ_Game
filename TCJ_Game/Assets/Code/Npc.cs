@@ -9,6 +9,7 @@ public class Npc : MonoBehaviour
     public Transform BackGround;
     public Transform NPCCharacter;
     private TalkSystem TalkSystem;
+    public int nextTalk;
 
     public string Name;
     [TextArea(5, 10)]
@@ -16,9 +17,10 @@ public class Npc : MonoBehaviour
     void Start()
     {
         TalkSystem = FindObjectOfType<TalkSystem>();
+
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         Vector3 Pos = Camera.main.WorldToScreenPoint(NPCCharacter.position);
@@ -34,10 +36,13 @@ public class Npc : MonoBehaviour
             this.gameObject.GetComponent<Npc>().enabled = true;
             TalkSystem.Names = Name;
             TalkSystem.talkLines = sentences;
+            TalkSystem.nextTalk = nextTalk;
+            var player = other.gameObject.GetComponent<ObjectCollet>();
+            TalkSystem.key = player.Key;
             FindObjectOfType<TalkSystem>().NPCName();
-
-
+            
         }
+
 
     }
     public void OnTriggerExit(Collider other)

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TalkSystem
   - Box
+  - Key
   layers:
   - Default
   - TransparentFX

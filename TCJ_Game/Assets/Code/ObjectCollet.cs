@@ -10,10 +10,16 @@ public class ObjectCollet : MonoBehaviour
     GameObject obJui;
     GameObject CoJui;
     public GameObject objToDestroy;
-   
+    public float moveSpeed;
+    private bool key;
+    public bool Key
+    {
+        get { return key; }
+    }
 
     void Start()
     {
+        moveSpeed = 5f;
         obJui = GameObject.Find("ObjectNum");       
         CoJui= GameObject.Find("ColletNum");
         if (Colleted==1)
@@ -25,8 +31,9 @@ public class ObjectCollet : MonoBehaviour
     }
     void OnTriggerEnter(Collider Plyr)
     {
-        if (Plyr.gameObject.tag == "Box")
+        if (Plyr.gameObject.tag == "Key")
         {
+            key = true;
             Destroy(objToDestroy);
             objects--;
             Colleted++;
@@ -41,5 +48,6 @@ public class ObjectCollet : MonoBehaviour
         {         
             obJui.GetComponent<Text>().text = "Done";             
         }
+        transform.Translate(moveSpeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0f, -moveSpeed * Input.GetAxis("Vertical") * Time.deltaTime);
     }
 }

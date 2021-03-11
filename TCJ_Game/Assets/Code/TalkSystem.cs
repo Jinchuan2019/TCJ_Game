@@ -22,7 +22,9 @@ public class TalkSystem : MonoBehaviour
     public bool talkActive = false;
     public bool talkEnded = false;
     public bool outOfRange = true;
-   
+    public int nextTalk;
+    public bool key;
+
     void Start()
     {
         TalkText.text = "";
@@ -62,8 +64,15 @@ public class TalkSystem : MonoBehaviour
     {
         if (outOfRange == false)
         {
-            int talkLength = talkLines.Length;
+            int talkLength = nextTalk;
             int currentTalkIndex = 0;
+
+            if (key==true)
+            {
+                talkLength = talkLines.Length;
+                currentTalkIndex = nextTalk;
+            }
+            
 
             while (currentTalkIndex < talkLength || !letterIsMUltiplied)
             {

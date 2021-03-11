@@ -264,7 +264,7 @@ MonoBehaviour:
     m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 9
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -338,6 +338,8 @@ MonoBehaviour:
   talkActive: 0
   talkEnded: 0
   outOfRange: 1
+  nextTalk: 0
+  key: 0
 --- !u!1 &104020995
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,6 +417,97 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104020995}
   m_CullTransparentMesh: 0
+--- !u!1 &145106071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 145106076}
+  - component: {fileID: 145106075}
+  - component: {fileID: 145106074}
+  - component: {fileID: 145106073}
+  m_Layer: 0
+  m_Name: key
+  m_TagString: Key
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &145106073
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145106071}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &145106074
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145106071}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: effc17b34cd91a6469c98d64ca0a009b, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &145106075
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145106071}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &145106076
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145106071}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.12, y: 1.87, z: 0.00000035762787}
+  m_LocalScale: {x: 0.9800148, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &172160861
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,7 +565,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 13
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -639,7 +732,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -724,11 +817,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackGround: {fileID: 1364132590}
   NPCCharacter: {fileID: 458314046}
+  nextTalk: 3
   Name: dada
   sentences:
   - "waawaw\t\n"
   - "bububub\t"
   - cccccccc
+  - 333333333
+  - 123
+  - 234
 --- !u!136 &458314043
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1073,7 +1170,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1125,6 +1222,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1200910313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 421558101303703856, guid: eb853d4c79b2f8948849bf28cb233a1a,
+    type: 3}
+  m_PrefabInstance: {fileID: 421558101341703964}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1200910320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200910313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94d4ec48c8b120d44850d58702fe258d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objToDestroy: {fileID: 145106071}
+  moveSpeed: 0
 --- !u!1 &1364132589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,6 +1485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackGround: {fileID: 1364132590}
   NPCCharacter: {fileID: 1775323738}
+  nextTalk: 0
   Name: lsp
   sentences:
   - "\u641E\u5FEB\u70B9\u641E\u5FEB\u70B9\uFF01"
@@ -1508,6 +1626,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 421558101303703853, guid: eb853d4c79b2f8948849bf28cb233a1a,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 421558101303703854, guid: eb853d4c79b2f8948849bf28cb233a1a,
         type: 3}
       propertyPath: m_IsTrigger
@@ -1518,7 +1641,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 421558101303703857, guid: eb853d4c79b2f8948849bf28cb233a1a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eb853d4c79b2f8948849bf28cb233a1a, type: 3}
 --- !u!1001 &7356728491191835361
 PrefabInstance:

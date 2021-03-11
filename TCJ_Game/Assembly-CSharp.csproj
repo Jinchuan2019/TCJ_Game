@@ -63,7 +63,6 @@
     <Compile Include="Assets\Code\Item.cs" />
     <Compile Include="Assets\Code\Npc.cs" />
     <Compile Include="Assets\Code\ObjectCollet.cs" />
-    <Compile Include="Assets\Code\PlayerMovement.cs" />
     <Compile Include="Assets\Code\SceneObjectLoader.cs" />
     <Compile Include="Assets\Code\SceneObjectSaver.cs" />
     <Compile Include="Assets\Code\SceneTransion.cs" />
