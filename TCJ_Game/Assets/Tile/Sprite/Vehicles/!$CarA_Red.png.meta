@@ -1,7 +1,187 @@
 fileFormatVersion: 2
 guid: d24339bd02bcad14585bc125f420cfe5
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: '!$CarA_Red_0'
+    21300002: '!$CarA_Red_1'
+    21300004: '!$CarA_Red_2'
+    21300006: '!$CarA_Red_3'
+    21300008: '!$CarA_Red_4'
+    21300010: '!$CarA_Red_5'
+    21300012: '!$CarA_Red_6'
+    21300014: '!$CarA_Red_7'
+    21300016: '!$CarA_Red_8'
+    21300018: '!$CarA_Red_9'
+    21300020: '!$CarA_Red_10'
+    21300022: '!$CarA_Red_11'
+    21300024: '!$CarA_Red_12'
+    21300026: '!$CarA_Red_13'
+    21300028: '!$CarA_Red_14'
+    21300030: '!$CarA_Red_15'
+    21300032: '!$CarA_Red_16'
+    21300034: '!$CarA_Red_17'
+    21300036: '!$CarA_Red_18'
+    21300038: '!$CarA_Red_19'
+    21300040: '!$CarA_Red_20'
+    21300042: '!$CarA_Red_21'
+    21300044: '!$CarA_Red_22'
+    21300046: '!$CarA_Red_23'
+    21300048: '!$CarA_Red_24'
+    21300050: '!$CarA_Red_25'
+    21300052: '!$CarA_Red_26'
+    21300054: '!$CarA_Red_27'
+    21300056: '!$CarA_Red_28'
+    21300058: '!$CarA_Red_29'
+    21300060: '!$CarA_Red_30'
+    21300062: '!$CarA_Red_31'
+    21300064: '!$CarA_Red_32'
+    21300066: '!$CarA_Red_33'
+    21300068: '!$CarA_Red_34'
+    21300070: '!$CarA_Red_35'
+    21300072: '!$CarA_Red_36'
+    21300074: '!$CarA_Red_37'
+    21300076: '!$CarA_Red_38'
+    21300078: '!$CarA_Red_39'
+    21300080: '!$CarA_Red_40'
+    21300082: '!$CarA_Red_41'
+    21300084: '!$CarA_Red_42'
+    21300086: '!$CarA_Red_43'
+    21300088: '!$CarA_Red_44'
+    21300090: '!$CarA_Red_45'
+    21300092: '!$CarA_Red_46'
+    21300094: '!$CarA_Red_47'
+    21300096: '!$CarA_Red_48'
+    21300098: '!$CarA_Red_49'
+    21300100: '!$CarA_Red_50'
+    21300102: '!$CarA_Red_51'
+    21300104: '!$CarA_Red_52'
+    21300106: '!$CarA_Red_53'
+    21300108: '!$CarA_Red_54'
+    21300110: '!$CarA_Red_55'
+    21300112: '!$CarA_Red_56'
+    21300114: '!$CarA_Red_57'
+    21300116: '!$CarA_Red_58'
+    21300118: '!$CarA_Red_59'
+    21300120: '!$CarA_Red_60'
+    21300122: '!$CarA_Red_61'
+    21300124: '!$CarA_Red_62'
+    21300126: '!$CarA_Red_63'
+    21300128: '!$CarA_Red_64'
+    21300130: '!$CarA_Red_65'
+    21300132: '!$CarA_Red_66'
+    21300134: '!$CarA_Red_67'
+    21300136: '!$CarA_Red_68'
+    21300138: '!$CarA_Red_69'
+    21300140: '!$CarA_Red_70'
+    21300142: '!$CarA_Red_71'
+    21300144: '!$CarA_Red_72'
+    21300146: '!$CarA_Red_73'
+    21300148: '!$CarA_Red_74'
+    21300150: '!$CarA_Red_75'
+    21300152: '!$CarA_Red_76'
+    21300154: '!$CarA_Red_77'
+    21300156: '!$CarA_Red_78'
+    21300158: '!$CarA_Red_79'
+    21300160: '!$CarA_Red_80'
+    21300162: '!$CarA_Red_81'
+    21300164: '!$CarA_Red_82'
+    21300166: '!$CarA_Red_83'
+    21300168: '!$CarA_Red_84'
+    21300170: '!$CarA_Red_85'
+    21300172: '!$CarA_Red_86'
+    21300174: '!$CarA_Red_87'
+    21300176: '!$CarA_Red_88'
+    21300178: '!$CarA_Red_89'
+    21300180: '!$CarA_Red_90'
+    21300182: '!$CarA_Red_91'
+    21300184: '!$CarA_Red_92'
+    21300186: '!$CarA_Red_93'
+    21300188: '!$CarA_Red_94'
+    21300190: '!$CarA_Red_95'
+    21300192: '!$CarA_Red_96'
+    21300194: '!$CarA_Red_97'
+    21300196: '!$CarA_Red_98'
+    21300198: '!$CarA_Red_99'
+    21300200: '!$CarA_Red_100'
+    21300202: '!$CarA_Red_101'
+    21300204: '!$CarA_Red_102'
+    21300206: '!$CarA_Red_103'
+    21300208: '!$CarA_Red_104'
+    21300210: '!$CarA_Red_105'
+    21300212: '!$CarA_Red_106'
+    21300214: '!$CarA_Red_107'
+    21300216: '!$CarA_Red_108'
+    21300218: '!$CarA_Red_109'
+    21300220: '!$CarA_Red_110'
+    21300222: '!$CarA_Red_111'
+    21300224: '!$CarA_Red_112'
+    21300226: '!$CarA_Red_113'
+    21300228: '!$CarA_Red_114'
+    21300230: '!$CarA_Red_115'
+    21300232: '!$CarA_Red_116'
+    21300234: '!$CarA_Red_117'
+    21300236: '!$CarA_Red_118'
+    21300238: '!$CarA_Red_119'
+    21300240: '!$CarA_Red_120'
+    21300242: '!$CarA_Red_121'
+    21300244: '!$CarA_Red_122'
+    21300246: '!$CarA_Red_123'
+    21300248: '!$CarA_Red_124'
+    21300250: '!$CarA_Red_125'
+    21300252: '!$CarA_Red_126'
+    21300254: '!$CarA_Red_127'
+    21300256: '!$CarA_Red_128'
+    21300258: '!$CarA_Red_129'
+    21300260: '!$CarA_Red_130'
+    21300262: '!$CarA_Red_131'
+    21300264: '!$CarA_Red_132'
+    21300266: '!$CarA_Red_133'
+    21300268: '!$CarA_Red_134'
+    21300270: '!$CarA_Red_135'
+    21300272: '!$CarA_Red_136'
+    21300274: '!$CarA_Red_137'
+    21300276: '!$CarA_Red_138'
+    21300278: '!$CarA_Red_139'
+    21300280: '!$CarA_Red_140'
+    21300282: '!$CarA_Red_141'
+    21300284: '!$CarA_Red_142'
+    21300286: '!$CarA_Red_143'
+    21300288: '!$CarA_Red_144'
+    21300290: '!$CarA_Red_145'
+    21300292: '!$CarA_Red_146'
+    21300294: '!$CarA_Red_147'
+    21300296: '!$CarA_Red_148'
+    21300298: '!$CarA_Red_149'
+    21300300: '!$CarA_Red_150'
+    21300302: '!$CarA_Red_151'
+    21300304: '!$CarA_Red_152'
+    21300306: '!$CarA_Red_153'
+    21300308: '!$CarA_Red_154'
+    21300310: '!$CarA_Red_155'
+    21300312: '!$CarA_Red_156'
+    21300314: '!$CarA_Red_157'
+    21300316: '!$CarA_Red_158'
+    21300318: '!$CarA_Red_159'
+    21300320: '!$CarA_Red_160'
+    21300322: '!$CarA_Red_161'
+    21300324: '!$CarA_Red_162'
+    21300326: '!$CarA_Red_163'
+    21300328: '!$CarA_Red_164'
+    21300330: '!$CarA_Red_165'
+    21300332: '!$CarA_Red_166'
+    21300334: '!$CarA_Red_167'
+    21300336: '!$CarA_Red_168'
+    21300338: '!$CarA_Red_169'
+    21300340: '!$CarA_Red_170'
+    21300342: '!$CarA_Red_171'
+    21300344: '!$CarA_Red_172'
+    21300346: '!$CarA_Red_173'
+    21300348: '!$CarA_Red_174'
+    21300350: '!$CarA_Red_175'
+    21300352: '!$CarA_Red_176'
+    21300354: '!$CarA_Red_177'
+    21300356: '!$CarA_Red_178'
+    21300358: '!$CarA_Red_179'
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -40,12 +220,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 5
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -71,7 +251,247 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: '!$CarA_Red_0'
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 242
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ed175bde2c29e3489caa08ca6b143aa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Red_1'
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 242
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e4c4d4093960b4409104bd021131aeb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Red_2'
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 242
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf171de1f72c177438dc58058c599a58
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Red_3'
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 161
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb71e1b1f9e3224fbe8f304a998bf61
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Red_4'
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 161
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 749cde442c49f6d4b8b02c7bd3e2a456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Red_5'
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 161
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fef0b2ec84bf9b448399d4660eec308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Red_6'
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 81
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35b8e6b8bd8549849b42e6f083e8df77
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Red_7'
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 81
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 086cc73cd3170324d899ac07dcf711b8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Red_8'
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 81
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7182f72ea8ad8b045abf16e9491e2cc8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Red_9'
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 2
+        width: 48
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d79721929ef3dbf48b1f5ce10cc9ab4e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Red_10'
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 2
+        width: 48
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e32f98ac55e2c241a43cdf043dd7bcc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Red_11'
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 2
+        width: 48
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b231f75223368043859be7887b6c21a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

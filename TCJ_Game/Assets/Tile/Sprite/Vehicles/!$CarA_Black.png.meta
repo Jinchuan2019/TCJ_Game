@@ -1,7 +1,187 @@
 fileFormatVersion: 2
 guid: 7139e4d0a91355f4eaafb5610e2808d5
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: '!$CarA_Black_0'
+    21300002: '!$CarA_Black_1'
+    21300004: '!$CarA_Black_2'
+    21300006: '!$CarA_Black_3'
+    21300008: '!$CarA_Black_4'
+    21300010: '!$CarA_Black_5'
+    21300012: '!$CarA_Black_6'
+    21300014: '!$CarA_Black_7'
+    21300016: '!$CarA_Black_8'
+    21300018: '!$CarA_Black_9'
+    21300020: '!$CarA_Black_10'
+    21300022: '!$CarA_Black_11'
+    21300024: '!$CarA_Black_12'
+    21300026: '!$CarA_Black_13'
+    21300028: '!$CarA_Black_14'
+    21300030: '!$CarA_Black_15'
+    21300032: '!$CarA_Black_16'
+    21300034: '!$CarA_Black_17'
+    21300036: '!$CarA_Black_18'
+    21300038: '!$CarA_Black_19'
+    21300040: '!$CarA_Black_20'
+    21300042: '!$CarA_Black_21'
+    21300044: '!$CarA_Black_22'
+    21300046: '!$CarA_Black_23'
+    21300048: '!$CarA_Black_24'
+    21300050: '!$CarA_Black_25'
+    21300052: '!$CarA_Black_26'
+    21300054: '!$CarA_Black_27'
+    21300056: '!$CarA_Black_28'
+    21300058: '!$CarA_Black_29'
+    21300060: '!$CarA_Black_30'
+    21300062: '!$CarA_Black_31'
+    21300064: '!$CarA_Black_32'
+    21300066: '!$CarA_Black_33'
+    21300068: '!$CarA_Black_34'
+    21300070: '!$CarA_Black_35'
+    21300072: '!$CarA_Black_36'
+    21300074: '!$CarA_Black_37'
+    21300076: '!$CarA_Black_38'
+    21300078: '!$CarA_Black_39'
+    21300080: '!$CarA_Black_40'
+    21300082: '!$CarA_Black_41'
+    21300084: '!$CarA_Black_42'
+    21300086: '!$CarA_Black_43'
+    21300088: '!$CarA_Black_44'
+    21300090: '!$CarA_Black_45'
+    21300092: '!$CarA_Black_46'
+    21300094: '!$CarA_Black_47'
+    21300096: '!$CarA_Black_48'
+    21300098: '!$CarA_Black_49'
+    21300100: '!$CarA_Black_50'
+    21300102: '!$CarA_Black_51'
+    21300104: '!$CarA_Black_52'
+    21300106: '!$CarA_Black_53'
+    21300108: '!$CarA_Black_54'
+    21300110: '!$CarA_Black_55'
+    21300112: '!$CarA_Black_56'
+    21300114: '!$CarA_Black_57'
+    21300116: '!$CarA_Black_58'
+    21300118: '!$CarA_Black_59'
+    21300120: '!$CarA_Black_60'
+    21300122: '!$CarA_Black_61'
+    21300124: '!$CarA_Black_62'
+    21300126: '!$CarA_Black_63'
+    21300128: '!$CarA_Black_64'
+    21300130: '!$CarA_Black_65'
+    21300132: '!$CarA_Black_66'
+    21300134: '!$CarA_Black_67'
+    21300136: '!$CarA_Black_68'
+    21300138: '!$CarA_Black_69'
+    21300140: '!$CarA_Black_70'
+    21300142: '!$CarA_Black_71'
+    21300144: '!$CarA_Black_72'
+    21300146: '!$CarA_Black_73'
+    21300148: '!$CarA_Black_74'
+    21300150: '!$CarA_Black_75'
+    21300152: '!$CarA_Black_76'
+    21300154: '!$CarA_Black_77'
+    21300156: '!$CarA_Black_78'
+    21300158: '!$CarA_Black_79'
+    21300160: '!$CarA_Black_80'
+    21300162: '!$CarA_Black_81'
+    21300164: '!$CarA_Black_82'
+    21300166: '!$CarA_Black_83'
+    21300168: '!$CarA_Black_84'
+    21300170: '!$CarA_Black_85'
+    21300172: '!$CarA_Black_86'
+    21300174: '!$CarA_Black_87'
+    21300176: '!$CarA_Black_88'
+    21300178: '!$CarA_Black_89'
+    21300180: '!$CarA_Black_90'
+    21300182: '!$CarA_Black_91'
+    21300184: '!$CarA_Black_92'
+    21300186: '!$CarA_Black_93'
+    21300188: '!$CarA_Black_94'
+    21300190: '!$CarA_Black_95'
+    21300192: '!$CarA_Black_96'
+    21300194: '!$CarA_Black_97'
+    21300196: '!$CarA_Black_98'
+    21300198: '!$CarA_Black_99'
+    21300200: '!$CarA_Black_100'
+    21300202: '!$CarA_Black_101'
+    21300204: '!$CarA_Black_102'
+    21300206: '!$CarA_Black_103'
+    21300208: '!$CarA_Black_104'
+    21300210: '!$CarA_Black_105'
+    21300212: '!$CarA_Black_106'
+    21300214: '!$CarA_Black_107'
+    21300216: '!$CarA_Black_108'
+    21300218: '!$CarA_Black_109'
+    21300220: '!$CarA_Black_110'
+    21300222: '!$CarA_Black_111'
+    21300224: '!$CarA_Black_112'
+    21300226: '!$CarA_Black_113'
+    21300228: '!$CarA_Black_114'
+    21300230: '!$CarA_Black_115'
+    21300232: '!$CarA_Black_116'
+    21300234: '!$CarA_Black_117'
+    21300236: '!$CarA_Black_118'
+    21300238: '!$CarA_Black_119'
+    21300240: '!$CarA_Black_120'
+    21300242: '!$CarA_Black_121'
+    21300244: '!$CarA_Black_122'
+    21300246: '!$CarA_Black_123'
+    21300248: '!$CarA_Black_124'
+    21300250: '!$CarA_Black_125'
+    21300252: '!$CarA_Black_126'
+    21300254: '!$CarA_Black_127'
+    21300256: '!$CarA_Black_128'
+    21300258: '!$CarA_Black_129'
+    21300260: '!$CarA_Black_130'
+    21300262: '!$CarA_Black_131'
+    21300264: '!$CarA_Black_132'
+    21300266: '!$CarA_Black_133'
+    21300268: '!$CarA_Black_134'
+    21300270: '!$CarA_Black_135'
+    21300272: '!$CarA_Black_136'
+    21300274: '!$CarA_Black_137'
+    21300276: '!$CarA_Black_138'
+    21300278: '!$CarA_Black_139'
+    21300280: '!$CarA_Black_140'
+    21300282: '!$CarA_Black_141'
+    21300284: '!$CarA_Black_142'
+    21300286: '!$CarA_Black_143'
+    21300288: '!$CarA_Black_144'
+    21300290: '!$CarA_Black_145'
+    21300292: '!$CarA_Black_146'
+    21300294: '!$CarA_Black_147'
+    21300296: '!$CarA_Black_148'
+    21300298: '!$CarA_Black_149'
+    21300300: '!$CarA_Black_150'
+    21300302: '!$CarA_Black_151'
+    21300304: '!$CarA_Black_152'
+    21300306: '!$CarA_Black_153'
+    21300308: '!$CarA_Black_154'
+    21300310: '!$CarA_Black_155'
+    21300312: '!$CarA_Black_156'
+    21300314: '!$CarA_Black_157'
+    21300316: '!$CarA_Black_158'
+    21300318: '!$CarA_Black_159'
+    21300320: '!$CarA_Black_160'
+    21300322: '!$CarA_Black_161'
+    21300324: '!$CarA_Black_162'
+    21300326: '!$CarA_Black_163'
+    21300328: '!$CarA_Black_164'
+    21300330: '!$CarA_Black_165'
+    21300332: '!$CarA_Black_166'
+    21300334: '!$CarA_Black_167'
+    21300336: '!$CarA_Black_168'
+    21300338: '!$CarA_Black_169'
+    21300340: '!$CarA_Black_170'
+    21300342: '!$CarA_Black_171'
+    21300344: '!$CarA_Black_172'
+    21300346: '!$CarA_Black_173'
+    21300348: '!$CarA_Black_174'
+    21300350: '!$CarA_Black_175'
+    21300352: '!$CarA_Black_176'
+    21300354: '!$CarA_Black_177'
+    21300356: '!$CarA_Black_178'
+    21300358: '!$CarA_Black_179'
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -40,12 +220,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 5
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -71,7 +251,247 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: '!$CarA_Black_0'
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 242
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5264901dd98462488ce4487be46ad02
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Black_1'
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 242
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be960020beb3a074b88928ee25e7a5a0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Black_2'
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 242
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 855a2891857edac45b1e40952514112b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Black_3'
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 161
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ee45b6f9e9fb4499410b2516cea87b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Black_4'
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 161
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e181423b53681614481f7641e9f6c47b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Black_5'
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 161
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a1414af252229645807497385af2fcb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Black_6'
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 81
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec62a998492cf0449d86aff6d39a13f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Black_7'
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 81
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d43a99018328d04dabacc30c296d2d6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Black_8'
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 81
+        width: 73
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80120ce9e9415ca48adbdb2b67dc7d66
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Black_9'
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 2
+        width: 48
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d13b2e549177ac4baebf0841c1d7153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Black_10'
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 2
+        width: 48
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ddf2773d37cf9a40bab46f5a7eec674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!$CarA_Black_11'
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 2
+        width: 48
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c58d3d291f75a694892b22adfbb72f79
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
