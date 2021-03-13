@@ -43,8 +43,8 @@ public class Door : MonoBehaviour,Interactable
         {
             switch (eventName)
             {
-                case EnumClass.Event.OpenTheDoor:
-                    OpenTheDoor(key);
+                case EnumClass.Event.OpenDoor:
+                    OpenDoor(key);
                     break;
                 default:
                     break;
@@ -55,7 +55,7 @@ public class Door : MonoBehaviour,Interactable
         {
             switch (eventName)
             {
-                case EnumClass.Event.OpenTheDoor:
+                case EnumClass.Event.OpenDoor:
                     UseBomb();
                     break;
                 default:
@@ -66,7 +66,7 @@ public class Door : MonoBehaviour,Interactable
         print(sender.gameObject);
     }
 
-    private void OpenTheDoor(bool key)
+    private void OpenDoor(bool key)
     {
         if(!_openDoor && key)
         {

@@ -6,7 +6,8 @@ namespace EnumClass
 {
     public enum Event
     {
-        OpenTheDoor,
+        OpenDoor,
+        OpenCar,
     }
 }
 

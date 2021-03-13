@@ -35,3 +35,9 @@ public class SaveData
     public string prefabName;
     public Vector3 position;
 }
+
+public class SaveCharacter : SaveData
+{
+    public bool key;
+    public bool isOpenTheDoor;
+}

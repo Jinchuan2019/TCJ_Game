@@ -8,7 +8,6 @@ public class SceneObjectLoader : MonoBehaviour
     public static SceneObjectLoader instance = null;
     public Dictionary<string, List<SaveData>> saveDatas;
     public Dictionary<string, bool> isFirstLoad;
-
     public GameObject bagManager;
     public GameObject canvas;
     private void Awake()
@@ -30,7 +29,7 @@ public class SceneObjectLoader : MonoBehaviour
             go.transform.position = new Vector3(18.0f, -3.0f);
 
             GameObject player = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Character/Player"));
-            player.transform.position = new Vector3(4.0f, -9.0f);
+            player.transform.position = new Vector3(-20.0f, -10.0f);
 
             DontDestroyOnLoad(player);
         }
@@ -67,11 +66,25 @@ public class SceneObjectLoader : MonoBehaviour
                 //Load New scene saved objects
                 if (saveDatas.ContainsKey(sceneName))
                 {
-                    foreach (SaveData saveData in saveDatas[sceneName])
+                    foreach (var saveData in saveDatas[sceneName])
                     {
-                        GameObject go = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/" + saveData.prefabName));
-                        go.transform.position = saveData.position;
+                        if (saveData.GetType().Name == "SaveCharacter")
+                        {
+                            //SaveCharacter saveCharacter = (SaveCharacter) saveData;
+
+                            //var go = Instantiate<CharacterController>(Resources.Load<CharacterController>("Prefabs/Character/" + saveCharacter.prefabName));
+                            //go.transform.position = saveCharacter.position;
+                            //go.SetKey(saveCharacter.key);
+                            //go.SetOpenDoor(saveCharacter.isOpenTheDoor);
+                        }
+                        else
+                        {
+                            GameObject go = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/" + saveData.prefabName));
+                            go.transform.position = saveData.position;
+                        }    
+
                     }
+
                 }
             }
             else

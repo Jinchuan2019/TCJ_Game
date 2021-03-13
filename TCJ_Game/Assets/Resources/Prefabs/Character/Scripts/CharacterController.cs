@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class CharacterController : MonoBehaviour, ISaveable
 {
     protected new Rigidbody2D rigidbody;
     protected Animator animator;
@@ -69,23 +69,42 @@ public class CharacterController : MonoBehaviour
 
         var door = other.gameObject.GetComponent<Door>();
         if(door != null) {
-            //OpenTheDoor
+            //OpenDoor
             if(Input.GetKeyDown(KeyCode.F))
             {
-                door.Interact(this,EnumClass.Event.OpenTheDoor,key);
+                door.Interact(this,EnumClass.Event.OpenDoor,key);
             }
         }
-        
+
+        var car = other.gameObject.GetComponent<Car>();
+        if (car != null)
+        {
+            //OpenCar
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                car.Interact(this, EnumClass.Event.OpenCar, key);
+            }
+        }
     }
 
     public void SetOpenDoor(bool inOpen)
     {
         isOpen = inOpen;
-        StartCoroutine(OpenTheDoor());
+        StartCoroutine(OpenDoor());
     }
-    private IEnumerator OpenTheDoor()
+    private IEnumerator OpenDoor()
     {
         yield return new WaitForSeconds(1.0f);
         SetOpenDoor(false);
+    }
+
+    public SaveData Save()
+    {
+        SaveCharacter saveData = new SaveCharacter();
+        saveData.prefabName = this.tag;
+        saveData.position = transform.position;
+        saveData.key = this.key;
+        saveData.isOpenTheDoor = this.isOpen;
+        return saveData;
     }
 }
