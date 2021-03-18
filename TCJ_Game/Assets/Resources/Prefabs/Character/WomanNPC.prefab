@@ -142,12 +142,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackGround: {fileID: 0}
   NPCCharacter: {fileID: 2166823516952678834}
-  isKey: 0
   Name: dada
   sentences:
   - "waawaw\t\n"
   - "bububub\t"
   - cccccccc
+  firstTalkLine: 0
 --- !u!58 &7896721463876099896
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class BagManager : MonoBehaviour
     private static BagManager _bagManager;
     public static BagManager GetBagManager
     {
-        get{ return _bagManager;}
+        get { return _bagManager; }
     }
     private bool _isOpen;
     public BagUnit cloneUnit;
@@ -16,10 +16,10 @@ public class BagManager : MonoBehaviour
     public Sprite[] totalItemSprites;
     private List<ItemData> itemDataList = new List<ItemData>();
 
-    private void Awake() 
+    private void Awake()
     {
         bag.SetActive(_isOpen);
-        if(_bagManager == null)
+        if (_bagManager == null)
         {
             _bagManager = this;
         }
@@ -27,7 +27,7 @@ public class BagManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             _isOpen = !_isOpen;
             bag.SetActive(_isOpen);
@@ -38,7 +38,7 @@ public class BagManager : MonoBehaviour
     {
         foreach (var item in itemDataList)
         {
-            if(itemInfo.ItemID == item.ItemID)
+            if (itemInfo.ItemID == item.ItemID)
             {
                 item.Count++;
                 itemInfo.Count = item.Count;
@@ -46,8 +46,8 @@ public class BagManager : MonoBehaviour
                 return;
             }
         }
-        
-        BagUnit unit = Instantiate<BagUnit>(cloneUnit,bagNode);
+
+        BagUnit unit = Instantiate<BagUnit>(cloneUnit, bagNode);
         itemInfo.SetBagUnit(unit);
         unit.gameObject.SetActive(true);
         itemDataList.Add(itemInfo);
@@ -58,9 +58,34 @@ public class BagManager : MonoBehaviour
     {
         unit.OnUse();
 
-        if(unit.GetItemData().Count == 0)
+        if (unit.GetItemData().Count == 0)
         {
             itemDataList.Remove(unit.GetItemData());
         }
+    }
+
+    public bool OnCheckBag()
+    {
+        bool isCoat = false;
+        bool isWatch = false;
+        foreach (var item in itemDataList)
+        {
+            if (item.ItemID == "Coat")
+            {
+                isCoat = true;
+            }
+            else if(item.ItemID == "Watch")
+            {
+                isWatch = true;
+            }
+        }
+
+        if(isCoat && isWatch)
+        {
+            print("can go to party");
+            return true;
+        }
+
+        return false;
     }
 }

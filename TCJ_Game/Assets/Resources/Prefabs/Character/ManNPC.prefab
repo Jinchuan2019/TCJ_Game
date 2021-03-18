@@ -142,12 +142,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackGround: {fileID: 0}
   NPCCharacter: {fileID: 7648266210462270565}
-  isKey: 1
   Name: lsp
   sentences:
   - "\u641E\u5FEB\u70B9\u641E\u5FEB\u70B9\uFF01"
   - "\u6765\u70B9\u8272\u7F51\u554A\uFF01"
   - "\u6211TM\u793E\u4FDD\uFF01"
+  firstTalkLine: 0
 --- !u!58 &2400702420293077028
 CircleCollider2D:
   m_ObjectHideFlags: 0

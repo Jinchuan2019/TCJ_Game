@@ -8,12 +8,13 @@ public class Item : MonoBehaviour, ISaveable
     private BagManager bag;
     public ItemData itemInfo;
     public string prefabName;
+    private AudioSource SE;
     // Start is called before the first frame update
     protected virtual void Start()
     {
         bag = BagManager.GetBagManager;
         collider = gameObject.GetComponent<Collider2D>();
-
+        SE = GetComponent<AudioSource>();
         collider.isTrigger = true;
     }
 
@@ -25,8 +26,9 @@ public class Item : MonoBehaviour, ISaveable
 
     public void TakeItem()
     {
-        print("Take "+ gameObject.name);
+        SE.Play();
         bag.ItemIntoBag(itemInfo);
+        print("Take "+ gameObject.name);
         Destroy(this.gameObject);
     }
 

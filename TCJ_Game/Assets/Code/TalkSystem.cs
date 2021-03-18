@@ -24,6 +24,7 @@ public class TalkSystem : MonoBehaviour
     public bool outOfRange = true;
     public int firstTalkLine;
     private bool secondTalk;
+    private AudioSource SE;
 
     private Npc _NPC;
     public void SetNPC(Npc isNPC) { _NPC = isNPC.GetComponent<Npc>(); }
@@ -31,6 +32,11 @@ public class TalkSystem : MonoBehaviour
     void Start()
     {
         TalkText.text = "";
+        if(firstTalkLine == 0)
+        {
+            secondTalk = true;
+        }
+        SE = GetComponent<AudioSource>();
     }
    
     void Update()
@@ -51,14 +57,15 @@ public class TalkSystem : MonoBehaviour
     public void NPCName()
     {
         outOfRange = false;
-        TalkBoxGui.gameObject.SetActive(true);
         nameText.text = Names;
         if (Input.GetKeyDown(KeyCode.F))
         {
             if (!talkActive)
             {
+                TalkBoxGui.gameObject.SetActive(true);
                 talkActive = true;
                 StartCoroutine(StartTalk());
+                SE.Play();
             }
         }
         StartTalk();
@@ -148,8 +155,7 @@ public class TalkSystem : MonoBehaviour
     {
         TalkGui.SetActive(false);
         TalkBoxGui.gameObject.SetActive(false);
-
-        _NPC.SetKey(false);
+        SE.Stop();
         secondTalk = true;
     }
     public void OutOfRange()

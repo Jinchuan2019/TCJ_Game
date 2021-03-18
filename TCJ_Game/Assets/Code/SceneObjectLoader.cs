@@ -10,6 +10,7 @@ public class SceneObjectLoader : MonoBehaviour
     public Dictionary<string, bool> isFirstLoad;
     public GameObject bagManager;
     public GameObject canvas;
+    public GameObject player;
     private void Awake()
     {
         if (instance == null)
@@ -24,11 +25,12 @@ public class SceneObjectLoader : MonoBehaviour
             isFirstLoad.Add("Level1", false);
             isFirstLoad.Add("Level2", false);
             isFirstLoad.Add("Level3", false);
+            isFirstLoad.Add("Level4", false);
             //
             GameObject go = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Item"));
             go.transform.position = new Vector3(18.0f, -3.0f);
 
-            GameObject player = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Character/Player"));
+            player = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Character/Player"));
             player.transform.position = new Vector3(-20.0f, -10.0f);
 
             DontDestroyOnLoad(player);
@@ -40,13 +42,19 @@ public class SceneObjectLoader : MonoBehaviour
     }
     public IEnumerator LoadScene(string sceneName)
     {
+        if(sceneName == "Level4")
+        {
+            DestroyAllObj();
+        }
+        
+
         if (!isFirstLoad.ContainsKey(sceneName))
         {
             ;
         }
         else
         {
-
+            yield return new WaitForSeconds(0.5f);
             //save Old scene
             SceneObjectSaver objectSaver = GameObject.Find("objectSaver")?.GetComponent<SceneObjectSaver>();
             if (objectSaver != null)
@@ -118,5 +126,13 @@ public class SceneObjectLoader : MonoBehaviour
             GameObject go = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Item"));
             go.transform.position = Vector3.zero;
         }
+    }
+
+    private void DestroyAllObj()
+    {
+        Destroy(this.gameObject);
+        Destroy(bagManager);
+        Destroy(canvas);
+        Destroy(player);
     }
 }

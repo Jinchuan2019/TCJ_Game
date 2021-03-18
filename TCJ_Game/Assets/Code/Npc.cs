@@ -10,7 +10,6 @@ public class Npc : MonoBehaviour
     public Transform NPCCharacter;
     private TalkSystem TalkSystem;
 
-    public bool isKey;
     private PlayerController Player;
 
     public string Name;
@@ -35,7 +34,7 @@ public class Npc : MonoBehaviour
     {
         this.gameObject.GetComponent<Npc>().enabled = true;
         FindObjectOfType<TalkSystem>().EnterRangeOfNPC();
-        if ((other.gameObject.tag == "Player") && Input.GetKeyDown(KeyCode.F))
+        if ((other.gameObject.tag == "Player"))
         {
             this.gameObject.GetComponent<Npc>().enabled = true;
             TalkSystem.Names = Name;
@@ -57,17 +56,5 @@ public class Npc : MonoBehaviour
         this.gameObject.GetComponent<Npc>().enabled = false;
     }
 
-    public void SetKey(bool key)
-    {
-        if (isKey)
-        {
-            Player.SetKey(isKey);
-            isKey = key;
-        }
-    }
-    public bool GetKey()
-    {
-        return isKey;
-    }
 }
 
