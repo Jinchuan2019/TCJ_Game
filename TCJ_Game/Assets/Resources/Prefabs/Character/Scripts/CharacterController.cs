@@ -59,7 +59,7 @@ public class CharacterController : MonoBehaviour, ISaveable
     protected virtual void OnTriggerStay2D(Collider2D other) 
     {
         var item = other.gameObject.GetComponent<Item>();
-        if(item != null) {
+        if(item != null && item.enabled == true) {
             //TakeItem
             if(Input.GetKeyDown(KeyCode.F))
             {
@@ -85,6 +85,17 @@ public class CharacterController : MonoBehaviour, ISaveable
                 car.Interact(this, EnumClass.Event.OpenCar, key);
             }
         }
+
+        var security = other.gameObject.GetComponent<PuzzleGame>();
+        if (security != null)
+        {
+            //OpenSecurity
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                security.Interact(this, EnumClass.Event.OpenSecurity, key);
+            }
+        }
+
     }
 
     public void SetOpenDoor(bool inOpen)

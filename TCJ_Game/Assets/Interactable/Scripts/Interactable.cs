@@ -8,6 +8,7 @@ namespace EnumClass
     {
         OpenDoor,
         OpenCar,
+        OpenSecurity,
     }
 }
 

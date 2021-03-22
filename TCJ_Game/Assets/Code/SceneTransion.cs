@@ -3,20 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneTransion : MonoBehaviour
+public class SceneTransion : SceneLoad
 {
-    public string sceneToLoad;
-    protected SceneObjectLoader sceneObjectLoader;
     private BagManager bag;
     private AudioSource SE;
-    protected virtual void Start()
+    protected override void Start()
     {
+        base.Start();
         bag = BagManager.GetBagManager;
         SE = GetComponent<AudioSource>();
-        if (sceneObjectLoader == null)
-        {
-            sceneObjectLoader = GameObject.Find("objectSaver").GetComponent<SceneObjectLoader>();
-        }
     }
 
     public virtual void OnTriggerEnter2D(Collider2D other)
@@ -26,18 +21,21 @@ public class SceneTransion : MonoBehaviour
         switch (sceneToLoad)
         {
             case "Level1":
+                OnPlayerLoadScene(other);
+                break;
             case "Level2":
+                if (bag.OnCheckBag()) return;
                 OnPlayerLoadScene(other);
                 break;
             case "Level3":
-                if (!bag.OnCheckBag()) return;
+                //if (!bag.OnCheckBag()) return;
                 OnPlayerLoadScene(other);
 
                 break;
-            case "Level4":
+            case "Level5":
                 if (other.CompareTag("Car"))
                 {
-                    StartCoroutine(sceneObjectLoader.LoadScene(sceneToLoad));
+                    sceneObjectLoader.NextScene(sceneToLoad);
                 }
                 break;
         }
@@ -54,7 +52,7 @@ public class SceneTransion : MonoBehaviour
             {
                 SE.Play();
                 character.SetOpenDoor(true);
-                StartCoroutine(sceneObjectLoader.LoadScene(sceneToLoad));
+                sceneObjectLoader.NextScene(sceneToLoad);
             }
         }
     }

@@ -36,33 +36,19 @@ public class Door : MonoBehaviour,Interactable
             moveDoorDown.transform.position = Vector2.Lerp(moveDoorDown.transform.position, doorDown , 0.2f);
         }
     }
-    public void Interact(CharacterController sender,EnumClass.Event eventName, bool key)
+    public void Interact(CharacterController sender, EnumClass.Event eventName, bool key)
     {
-
-        if(sender.gameObject.GetComponent<PlayerController>())
+        if (eventName == EnumClass.Event.OpenDoor)
         {
-            switch (eventName)
+            if (sender.gameObject.GetComponent<PlayerController>())
             {
-                case EnumClass.Event.OpenDoor:
-                    OpenDoor(key);
-                    break;
-                default:
-                    break;
+                OpenDoor(key);
+            }
+            else if (sender.gameObject.GetComponent<ThiefController>())
+            {
+                UseBomb();
             }
         }
-
-        if(sender.gameObject.GetComponent<ThiefController>())
-        {
-            switch (eventName)
-            {
-                case EnumClass.Event.OpenDoor:
-                    UseBomb();
-                    break;
-                default:
-                    break;
-            }
-        }
-
         print(sender.gameObject);
     }
 

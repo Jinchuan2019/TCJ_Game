@@ -65,33 +65,19 @@ public class Car : MonoBehaviour,Interactable
     }
     public void Interact(CharacterController sender,EnumClass.Event eventName, bool key)
     {
-
-        if(sender.gameObject.GetComponent<PlayerController>())
+        if(eventName == EnumClass.Event.OpenCar)
         {
-            switch (eventName)
+            if (sender.gameObject.GetComponent<PlayerController>())
             {
-                case EnumClass.Event.OpenCar:
-                    player = sender.gameObject.GetComponent<Transform>();
-                    StartCoroutine(OpenCar(key));
-                    break;
-                default:
-                    break;
+                player = sender.gameObject.GetComponent<Transform>();
+                StartCoroutine(OpenCar(key));
+            }
+            else if (sender.gameObject.GetComponent<ThiefController>())
+            {
+                player = sender.gameObject.GetComponent<Transform>();
+                UseCar();
             }
         }
-
-        if(sender.gameObject.GetComponent<ThiefController>())
-        {
-            switch (eventName)
-            {
-                case EnumClass.Event.OpenCar:
-                    player = sender.gameObject.GetComponent<Transform>();
-                    UseCar();
-                    break;
-                default:
-                    break;
-            }
-        }
-
         print(sender.gameObject);
     }
 

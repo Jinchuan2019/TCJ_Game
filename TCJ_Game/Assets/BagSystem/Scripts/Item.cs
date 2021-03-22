@@ -9,8 +9,9 @@ public class Item : MonoBehaviour, ISaveable
     public ItemData itemInfo;
     public string prefabName;
     private AudioSource SE;
-    // Start is called before the first frame update
-    protected virtual void Start()
+    
+    
+    protected void Awake()
     {
         bag = BagManager.GetBagManager;
         collider = gameObject.GetComponent<Collider2D>();

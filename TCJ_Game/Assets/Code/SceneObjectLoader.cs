@@ -26,9 +26,7 @@ public class SceneObjectLoader : MonoBehaviour
             isFirstLoad.Add("Level2", false);
             isFirstLoad.Add("Level3", false);
             isFirstLoad.Add("Level4", false);
-            //
-            GameObject go = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Item"));
-            go.transform.position = new Vector3(18.0f, -3.0f);
+            isFirstLoad.Add("Level5", false);
 
             player = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Character/Player"));
             player.transform.position = new Vector3(-20.0f, -10.0f);
@@ -42,12 +40,6 @@ public class SceneObjectLoader : MonoBehaviour
     }
     public IEnumerator LoadScene(string sceneName)
     {
-        if(sceneName == "Level4")
-        {
-            DestroyAllObj();
-        }
-        
-
         if (!isFirstLoad.ContainsKey(sceneName))
         {
             ;
@@ -56,7 +48,7 @@ public class SceneObjectLoader : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f);
             //save Old scene
-            SceneObjectSaver objectSaver = GameObject.Find("objectSaver")?.GetComponent<SceneObjectSaver>();
+            SceneObjectSaver objectSaver = GameObject.Find("objectSaver").GetComponent<SceneObjectSaver>();
             if (objectSaver != null)
             {
                 Scene scene = SceneManager.GetActiveScene();
@@ -76,21 +68,8 @@ public class SceneObjectLoader : MonoBehaviour
                 {
                     foreach (var saveData in saveDatas[sceneName])
                     {
-                        if (saveData.GetType().Name == "SaveCharacter")
-                        {
-                            //SaveCharacter saveCharacter = (SaveCharacter) saveData;
-
-                            //var go = Instantiate<CharacterController>(Resources.Load<CharacterController>("Prefabs/Character/" + saveCharacter.prefabName));
-                            //go.transform.position = saveCharacter.position;
-                            //go.SetKey(saveCharacter.key);
-                            //go.SetOpenDoor(saveCharacter.isOpenTheDoor);
-                        }
-                        else
-                        {
-                            GameObject go = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/" + saveData.prefabName));
-                            go.transform.position = saveData.position;
-                        }    
-
+                        GameObject go = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/" + saveData.prefabName));
+                        go.transform.position = saveData.position;
                     }
 
                 }
@@ -110,6 +89,22 @@ public class SceneObjectLoader : MonoBehaviour
             }
         }
     }
+
+    public void NextScene(string sceneName)
+    {
+        if (sceneName == "Level4")
+        {
+            player.GetComponent<CharacterController>().SetKey(true);
+        }
+        StartCoroutine(LoadScene(sceneName));
+
+        if (sceneName == "Level5")
+        {
+            StartCoroutine(DestroyAllObj());
+        }
+
+    }
+
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Alpha2))
@@ -128,8 +123,10 @@ public class SceneObjectLoader : MonoBehaviour
         }
     }
 
-    private void DestroyAllObj()
+    private IEnumerator DestroyAllObj()
     {
+        yield return new WaitForSeconds(0.5f);
+
         Destroy(this.gameObject);
         Destroy(bagManager);
         Destroy(canvas);
