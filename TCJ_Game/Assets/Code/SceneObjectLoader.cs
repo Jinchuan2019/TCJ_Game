@@ -8,6 +8,7 @@ public class SceneObjectLoader : MonoBehaviour
     public static SceneObjectLoader instance = null;
     public Dictionary<string, List<SaveData>> saveDatas;
     public Dictionary<string, bool> isFirstLoad;
+    public List<SaveData> moveableSave;
     public GameObject bagManager;
     public GameObject canvas;
     public GameObject player;
@@ -31,7 +32,6 @@ public class SceneObjectLoader : MonoBehaviour
             player = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Character/Player"));
             player.transform.position = new Vector3(-20.0f, -10.0f);
 
-            DontDestroyOnLoad(player);
         }
         else
         {
@@ -40,54 +40,63 @@ public class SceneObjectLoader : MonoBehaviour
     }
     public IEnumerator LoadScene(string sceneName)
     {
-        if (!isFirstLoad.ContainsKey(sceneName))
+        yield return new WaitForSeconds(0.5f);
+        //save Old scene
+        SceneObjectSaver objectSaver = GameObject.Find("objectSaver").GetComponent<SceneObjectSaver>();
+        if (objectSaver != null)
         {
-            ;
-        }
-        else
-        {
-            yield return new WaitForSeconds(0.5f);
-            //save Old scene
-            SceneObjectSaver objectSaver = GameObject.Find("objectSaver").GetComponent<SceneObjectSaver>();
-            if (objectSaver != null)
-            {
-                Scene scene = SceneManager.GetActiveScene();
-                saveDatas.Remove(scene.name);
-                saveDatas.Add(scene.name, objectSaver.SaveScene());
-            }
-            //Load New scene base
-            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-            while (!asyncLoad.isDone)
-            {
-                yield return null;
-            }
-            if (!isFirstLoad[sceneName])
-            {
-                //Load New scene saved objects
-                if (saveDatas.ContainsKey(sceneName))
-                {
-                    foreach (var saveData in saveDatas[sceneName])
-                    {
-                        GameObject go = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/" + saveData.prefabName));
-                        go.transform.position = saveData.position;
-                    }
+            Scene scene = SceneManager.GetActiveScene();
+            saveDatas.Remove(scene.name);
+            List<SaveData> nonmoveableData;
+            List<SaveData> moveableData;
+            objectSaver.SaveScene(out nonmoveableData, out moveableData);
 
-                }
-            }
-            else
+            saveDatas.Add(scene.name, nonmoveableData);
+            moveableSave = moveableData;
+        }
+        //Load New scene base
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+        if (!isFirstLoad[sceneName])
+        {
+            //Load New scene saved objects
+            if (saveDatas.ContainsKey(sceneName))
             {
-                SaveData ItemData = new SaveData();
-                ItemData.prefabName = "Item";
-                ItemData.position = Vector3.zero;
-                saveDatas.Add(sceneName, new List<SaveData>() { ItemData });
-                isFirstLoad[sceneName] = false;
-                foreach (SaveData saveData in saveDatas[sceneName])
+                foreach (var saveData in saveDatas[sceneName])
                 {
                     GameObject go = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/" + saveData.prefabName));
+
+                    if(saveData.GetType() == typeof(SaveCharacter))
+                    {
+                        var CharacterController = go.GetComponent<CharacterController>();
+                        CharacterController.LoadSave((SaveCharacter)saveData);
+                    }
+                    else
+                    {
+                        go.transform.position = saveData.position;
+                    }
+                }
+            }
+
+            foreach (var saveData in moveableSave)
+            {
+                GameObject go = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/" + saveData.prefabName));
+
+                if (saveData.GetType() == typeof(SaveCharacter))
+                {
+                    var CharacterController = go.GetComponent<CharacterController>();
+                    CharacterController.LoadSave((SaveCharacter)saveData);
+                }
+                else
+                {
                     go.transform.position = saveData.position;
                 }
             }
         }
+        
     }
 
     public void NextScene(string sceneName)

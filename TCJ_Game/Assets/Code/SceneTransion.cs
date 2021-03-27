@@ -28,7 +28,7 @@ public class SceneTransion : SceneLoad
                 OnPlayerLoadScene(other);
                 break;
             case "Level3":
-                //if (!bag.OnCheckBag()) return;
+                if (!bag.OnCheckBag()) return;
                 OnPlayerLoadScene(other);
 
                 break;
@@ -48,10 +48,9 @@ public class SceneTransion : SceneLoad
         {
             var character = other.GetComponent<CharacterController>();
 
-            if (!character.GetOpenDoor())
+            if (character != null)
             {
                 SE.Play();
-                character.SetOpenDoor(true);
                 sceneObjectLoader.NextScene(sceneToLoad);
             }
         }

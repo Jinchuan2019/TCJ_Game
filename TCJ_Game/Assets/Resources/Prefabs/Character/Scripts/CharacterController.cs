@@ -7,11 +7,9 @@ public class CharacterController : MonoBehaviour, ISaveable
     protected new Rigidbody2D rigidbody;
     protected Animator animator;
     protected bool key;
+    public bool moveable;
     public void SetKey(bool iskey) { key = iskey; }
 
-    protected bool isOpen;
-
-    public bool GetOpenDoor() { return isOpen; }
     private enum State
     {
         GetItem,
@@ -43,36 +41,36 @@ public class CharacterController : MonoBehaviour, ISaveable
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
 
-        if( vertical != 0 || horizontal != 0)
+        if (vertical != 0 || horizontal != 0)
         {
-            Vector2 direction = new Vector2( horizontal, vertical).normalized;
+            Vector2 direction = new Vector2(horizontal, vertical).normalized;
             float y = Camera.main.transform.rotation.eulerAngles.y;
             Vector2 target = Vector2.Lerp(transform.forward, direction, 0.5f);
             transform.Translate(target * Time.deltaTime * speed, Space.World);
-            
+
             animator.SetFloat("XSpeed", horizontal);
             animator.SetFloat("YSpeed", vertical);
         }
-        
+
     }
 
-    protected virtual void OnTriggerStay2D(Collider2D other) 
+    protected virtual void OnTriggerStay2D(Collider2D other)
     {
         var item = other.gameObject.GetComponent<Item>();
-        if(item != null && item.enabled == true) {
+        if (item != null && item.enabled == true) {
             //TakeItem
-            if(Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 item.TakeItem();
             }
         }
 
         var door = other.gameObject.GetComponent<Door>();
-        if(door != null) {
+        if (door != null) {
             //OpenDoor
-            if(Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                door.Interact(this,EnumClass.Event.OpenDoor,key);
+                door.Interact(this, EnumClass.Event.OpenDoor, key);
             }
         }
 
@@ -98,24 +96,19 @@ public class CharacterController : MonoBehaviour, ISaveable
 
     }
 
-    public void SetOpenDoor(bool inOpen)
-    {
-        isOpen = inOpen;
-        StartCoroutine(OpenDoor());
-    }
-    private IEnumerator OpenDoor()
-    {
-        yield return new WaitForSeconds(1.0f);
-        SetOpenDoor(false);
-    }
-
     public SaveData Save()
     {
         SaveCharacter saveData = new SaveCharacter();
-        saveData.prefabName = this.tag;
+        saveData.prefabName = "Character/" + this.tag;
         saveData.position = transform.position;
         saveData.key = this.key;
-        saveData.isOpenTheDoor = this.isOpen;
+        saveData.moveable = this.moveable;
         return saveData;
+    }
+
+    public void LoadSave(SaveCharacter saveCharacter)
+    {
+        this.transform.position = saveCharacter.position;
+        this.key = saveCharacter.key;
     }
 }

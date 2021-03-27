@@ -8,20 +8,29 @@ public class SceneObjectSaver : MonoBehaviour
 {
 
 
-    public List<SaveData> SaveScene()
+    public void SaveScene(out List<SaveData> nonsaveableData, out List<SaveData> moveableData)
     {
 
-        List<SaveData> res = new List<SaveData>();
+        nonsaveableData = new List<SaveData>();
+        moveableData = new List<SaveData>();
+
         GameObject[] rootGameObjects = SceneManager.GetActiveScene().GetRootGameObjects();
         foreach (var rootGameObject in rootGameObjects)
         {
             ISaveable[] childrenInterfaces = rootGameObject.GetComponentsInChildren<ISaveable>();
             foreach (var childInterface in childrenInterfaces)
             {
-                res.Add(childInterface.Save());
+                var saveData = childInterface.Save();
+                if(saveData.moveable)
+                {
+                    moveableData.Add(saveData);
+                }
+                else
+                {
+                    nonsaveableData.Add(saveData);
+                }
             }
         }
-        return res;
     }
 }
 public interface ISaveable
@@ -34,6 +43,7 @@ public class SaveData
 {
     public string prefabName;
     public Vector3 position;
+    public bool moveable;
 }
 
 public class SaveCharacter : SaveData
